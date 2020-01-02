@@ -12,22 +12,22 @@ export default class App extends React.Component {
       monthlyPayment: 0
     };
     this.handleChange = this.handleChange.bind(this);
-    this.calculateMonthlyPayment = this.calculateMonthlyPayment.bind(this)
+    this.calculateMonthlyPayment = this.calculateMonthlyPayment.bind(this);
   }
 
   handleChange(event) {
     switch (event.target.name) {
       case 'principal':
-        this.setState({ principal: Number(event.target.value) })
+        this.setState({ principal: Number(event.target.value) });
         break;
       case 'loanTerm':
-        this.setState({ loanTerm: Number(event.target.value) })
+        this.setState({ loanTerm: Number(event.target.value) });
         break;
       case 'period':
-        this.setState({ period: Number(event.target.value) })
+        this.setState({ period: Number(event.target.value) });
         break;
       case 'interestRate':
-        this.setState({ interestRate: Number(event.target.value) })
+        this.setState({ interestRate: Number(event.target.value) });
         break;
       default:
         break;
@@ -39,10 +39,10 @@ export default class App extends React.Component {
       this.state.principal,
       this.state.interestRate,
       this.state.loanTerm,
-      this.state.period)
-    let monthlyPayment = mortgage.monthlyPayment()
-    let monthly = document.getElementById('output')
-    monthly.innerText = "$" + monthlyPayment
+      this.state.period);
+    let monthlyPayment = mortgage.monthlyPayment();
+    let monthly = document.getElementById('output');
+    monthly.innerText = "$" + monthlyPayment;
   }
 
   render() {
